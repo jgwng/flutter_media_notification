@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
                   child: Text('Show notification'),
                   onPressed: () {
                     MediaNotification.showNotification(
-                        title: 'Title', author: 'Song author');
+                        title: 'Title', author: 'Author');
                     setState(() => status = 'play');
                   }),
               FlatButton(

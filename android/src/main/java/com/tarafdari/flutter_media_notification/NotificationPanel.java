@@ -68,14 +68,22 @@ public class NotificationPanel extends Service {
         PendingIntent selectPendingIntent = PendingIntent.getBroadcast(this, 0, selectIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 //        MediaButtonReceiver.handleIntent(mediaSession, selectIntent);
 
+
+
+//        Notification notification = new NotificationCompat.Builder(this,CHANNEL_ID)
+//                .setSmallIcon(R.drawable.ic_stat_music_note)
+//                .setContentTitle(title)
+//                .setContentText(author);
+
+
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .addAction(R.drawable.baseline_skip_previous_black_48, "prev", pendingPrevIntent)
-                .addAction(iconPlayPause, titlePlayPause, pendingToggleIntent)
-                .addAction(R.drawable.baseline_skip_next_black_48, "next", pendingNextIntent)
-                .setStyle(new androidx.media.app.NotificationCompat.MediaStyle()
-                        .setShowActionsInCompactView(0, 1,2)
-                        .setShowCancelButton(true)
-                        .setMediaSession(mediaSession.getSessionToken()))
+//                .addAction(R.drawable.baseline_skip_previous_black_48, "prev", pendingPrevIntent)
+//                .addAction(iconPlayPause, titlePlayPause, pendingToggleIntent)
+//                .addAction(R.drawable.baseline_skip_next_black_48, "next", pendingNextIntent)
+//                .setStyle(new androidx.media.app.NotificationCompat.MediaStyle()
+//                        .setShowActionsInCompactView(0, 1,2)
+//                        .setShowCancelButton(true)
+//                        .setMediaSession(mediaSession.getSessionToken()))
                 .setSmallIcon(R.drawable.ic_stat_music_note)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setVibrate(new long[]{0L})
@@ -84,7 +92,6 @@ public class NotificationPanel extends Service {
                 .setContentText(author)
                 .setSubText(title)
                 .setContentIntent(selectPendingIntent)
-                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.ic_stat_music_note))
                 .build();
 
         startForeground(NOTIFICATION_ID, notification);
