@@ -90,7 +90,7 @@ public class NotificationPanel extends Service {
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setContentTitle(title)
                 .setContentText(author)
-                .setSubText(title)
+//                .setSubText(title)
                 .setContentIntent(selectPendingIntent)
                 .build();
 
